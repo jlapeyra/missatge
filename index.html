@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Box amb Actualització en Temps Real</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="actualitza()">
+    <h1>Missatge secret</h1>
+    <p>Contrasenya: <input type="text" id="inputBox" oninput="actualitza()"></p>
+    <p id="mostrarInput"></p>
+
+    <script>
+        function actualitza() {
+            // Obtenim el valor de l'input box
+            var valorInput = document.getElementById("inputBox").value;
+
+            // Mostrem el valor en el paràgraf
+            document.getElementById("mostrarInput").textContent = desxifra(valorInput);
+        }
+    </script>
+</body>
+</html>
