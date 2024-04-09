@@ -20,10 +20,13 @@
     <script>
         function actualitza() {
             // Obtenim el valor de l'input box
-            var valorInput = document.getElementById("inputBox").value;
+            var clau = document.getElementById("inputBox").value;
+
+            // Obtenim el paràmetre p de la url
+            var ident = new URLSearchParams(document.location.search).get('p');
 
             // Mostrem el valor en el paràgraf
-            document.getElementById("mostrarInput").textContent = desxifra(valorInput);
+            document.getElementById("mostrarInput").textContent = desxifra(clau, ident);
         }
     </script>
 </body>
